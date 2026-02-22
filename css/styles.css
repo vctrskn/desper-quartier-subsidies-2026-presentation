@@ -1,0 +1,380 @@
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef2ff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #dbe2f3;
+  --accent: #4f46e5;
+  --accent-soft: #e0e7ff;
+  --radius: 22px;
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 5% 0%, rgba(79, 70, 229, 0.08), transparent 34%),
+    radial-gradient(circle at 95% 100%, rgba(59, 130, 246, 0.12), transparent 30%),
+    var(--bg);
+  color: var(--text);
+}
+
+.app-shell {
+  width: min(1160px, 100% - 3rem);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.topbar,
+.slide,
+.controls {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+
+.topbar {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.brand-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #0ea5e9);
+}
+
+.brand-overline {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+}
+
+.topbar-meta {
+  min-width: 220px;
+}
+
+#slideCounter {
+  margin: 0 0 0.3rem;
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--accent-soft);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #4f46e5, #0ea5e9);
+  transition: width 220ms ease;
+}
+
+.slide {
+  min-height: min(70vh, 780px);
+  padding: clamp(1.4rem, 2.2vw, 2.2rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.slide-kicker {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.slide-title {
+  font-size: clamp(1.4rem, 3.2vw, 2.5rem);
+}
+
+.slide-subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.9rem;
+  background: var(--surface);
+}
+
+.card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.refs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.program-card {
+  border: 1px solid var(--line);
+  border-left-width: 7px;
+  border-radius: 16px;
+  padding: 0.95rem;
+  background: #ffffff;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ref-card {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.95rem;
+  background: #ffffff;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ref-code {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.ref-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.ref-provider {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.ref-link {
+  color: #1d4ed8;
+  font-size: 0.86rem;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.ref-link:hover {
+  text-decoration: underline;
+}
+
+.program-code {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.program-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.program-provider,
+.program-type,
+.program-difficulty,
+.program-effect {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.difficulty-5 {
+  border-left-color: #16a34a;
+  background: linear-gradient(90deg, rgba(22, 163, 74, 0.1), #ffffff 16%);
+}
+
+.difficulty-4 {
+  border-left-color: #65a30d;
+  background: linear-gradient(90deg, rgba(101, 163, 13, 0.1), #ffffff 16%);
+}
+
+.difficulty-3 {
+  border-left-color: #f59e0b;
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), #ffffff 16%);
+}
+
+.difficulty-2 {
+  border-left-color: #f97316;
+  background: linear-gradient(90deg, rgba(249, 115, 22, 0.12), #ffffff 16%);
+}
+
+.difficulty-1 {
+  border-left-color: #dc2626;
+  background: linear-gradient(90deg, rgba(220, 38, 38, 0.12), #ffffff 16%);
+}
+
+.card p,
+.card li,
+.slide li,
+.slide p {
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.slide ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.metric {
+  background: var(--surface-alt);
+  border-radius: 16px;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+}
+
+.metric-value {
+  font-size: 1.2rem;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.metric-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+.badge {
+  display: inline-flex;
+  padding: 0.2rem 0.5rem;
+  border-radius: 99px;
+  background: var(--accent-soft);
+  color: #3730a3;
+  font-size: 0.8rem;
+  margin-left: 0.35rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+}
+
+.control-btn {
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--text);
+  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.58rem 1rem;
+  cursor: pointer;
+}
+
+.control-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.control-btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #0ea5e9);
+  color: #fff;
+  border-color: transparent;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+@media (max-width: 900px) {
+  .grid-2,
+  .metric-row,
+  .program-grid,
+  .refs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #slideCounter {
+    text-align: left;
+  }
+
+  .topbar-meta {
+    width: 100%;
+  }
+
+  .controls {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .hint {
+    order: 3;
+    width: 100%;
+  }
+}
